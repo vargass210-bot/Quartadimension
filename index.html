@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarta Dimension | Tecnología Premium</title>
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1249444380564832');
+    fbq('track', 'PageView');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cian: #48C1CF;
+            --apple-bg: #f5f5f7;
+            --text: #1d1d1f;
+            --urgencia: #ff3b30;
+        }
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #fff; color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
+
+        header { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { height: 60px; }
+
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 1; }
+        .hero p { font-size: 1.5rem; margin: 25px 0 40px; max-width: 700px; }
+
+        .urgencia-bar { background: var(--urgencia); color: white; padding: 20px; text-align: center; font-size: 1.6rem; font-weight: 900; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .product-grid { display: flex; align-items: center; gap: 50px; margin-bottom: 100px; }
+        .product-grid:nth-child(even) { flex-direction: row-reverse; }
+
+        /* SLIDER INTELIGENTE */
+        .product-slider-container {
+            width: 50%; position: relative; overflow: hidden; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: #eee;
+        }
+        .product-slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); width: fit-content; }
+        .product-slider-track img { flex-shrink: 0; width: 100%; display: block; object-fit: cover; aspect-ratio: 1/1; }
+
+        .product-info { width: 50%; }
+        .product-info h2 { font-size: 2.5rem; margin-bottom: 15px; line-height: 1.1; }
+        .price { font-size: 3.5rem; font-weight: 900; color: var(--cian); margin: 20px 0; }
+
+        .testimonial-slider { background: var(--apple-bg); padding: 80px 0; }
+        .testimonial-track { 
+            display: flex; 
+            gap: 20px; 
+            overflow-x: auto; 
+            padding: 20px;
+            scrollbar-width: none; /* Oculta scroll en Firefox */
+        }
+        .testimonial-track::-webkit-scrollbar { display: none; } /* Oculta scroll en Chrome */
+
+        .testimonial-card { 
+            min-width: 300px; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 25px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .user-img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; border: 2px solid var(--cian); }
+
+        .btn {
+            background: #25D366; color: white; padding: 20px 40px; border-radius: 60px; 
+            text-decoration: none; font-weight: 900; font-size: 1.2rem; display: inline-block;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: 0.3s; text-align: center;
+        }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+        @media (max-width: 768px) {
+            .product-grid, .product-grid:nth-child(even) { flex-direction: column; text-align: center; }
+            .product-slider-container, .product-info { width: 100%; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.PNG" alt="Quarta Dimension" class="logo">
+    <div style="text-align: right;">
+        <span style="display: block; font-weight: 900; color: var(--cian);">FORMOSA CAPITAL</span>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>RECUERDA TU INFANCIA</h1>
+    <p>Tecnología Premium para disfrutar en casa. Envíos garantizados hoy mismo en Formosa.</p>
+    <a href="#comprar" class="btn">VER PRODUCTOS</a>
+</section>
+
+<div class="urgencia-bar">
+    🔥 ¡QUEDAN <span id="stock">3</span> UNIDADES DISPONIBLES!
+</div>
+
+<div class="container" id="comprar">
+    <div class="product-grid">
+        <div class="product-slider-container">
+            <div class="product-slider-track" id="track1">
+                <img src="m15-1.png" alt="1">
+                <img src="m15-2.png" alt="2">
+                <img src="m15-3.png" alt="3">
+            </div>
+        </div>
+        <div class="product-info">
+            <h2>Game Stick M15 Pro 4K</h2>
+            <p>Más de 10,000 juegos clásicos. PS1, Sega, Family y más. ¡Conectar y jugar!</p>
+            <div class="price">$49.999</div>
+            <a href="https://wa.me/543704344297?text=Hola!%20Quiero%20la%20consola%20M15" class="btn">PEDIR POR WHATSAPP</a>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-slider-container">
+            <div class="product-slider-track" id="track2">
+                <img src="pods-1.png" alt="1">
+                <img src="pods-2.png" alt="2">
+                <img src="pods-3.png" alt="3">
+                <img src="pods-4.png" alt="4">
+                <img src="pods-5.png" alt="5">
+                <img src="pods-6.png" alt="6">
+            </div>
+        </div>
+        <div class="product-info">
+            <h2>Ultrapods Max Premium</h2>
+            <p>Diseño transparente, sonido HD y batería de larga duración. Tendencia total.</p>
+            <div class="price">$14.999</div>
+            <a href="https://wa.me/543704344297?text=Hola!%20Quiero%20los%20Ultrapods" class="btn">COMPRAR AHORA</a>
+        </div>
+    </div>
+</div>
+
+<section class="testimonial-slider">
+    <h2 style="text-align: center; font-weight: 900; margin-bottom: 40px;">Clientes de Quarta Dimension</h2>
+    <div class="testimonial-track">
+        <div class="testimonial-card">
+            <p>"La consola es un viaje al pasado. Me llegó al toque en el centro."</p>
+            <strong>Marcos G. ⭐⭐⭐⭐⭐</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>"Los auris suenan de locos. Muy conforme con la compra."</p>
+            <strong>Luciana R. ⭐⭐⭐⭐⭐</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>"Excelente atención por WhatsApp, me sacaron todas las dudas."</p>
+            <strong>Ricardo F. ⭐⭐⭐⭐⭐</strong>
+        </div>
+    </div>
+</section>
+
+<footer style="background: var(--text); color: white; padding: 40px 20px; text-align: center;">
+    <p>Quarta Dimension - Formosa Capital | 2026</p>
+</footer>
+
+<a href="https://wa.me/543704344297" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
+</a>
+
+<script>
+    // Stock Urgencia
+    setInterval(() => {
+        const s = document.getElementById('stock');
+        if(s) s.innerText = Math.floor(Math.random() * 4) + 1;
+    }, 5000);
+
+    // Slider Inteligente
+    function startAutoSlider(trackId) {
+        const track = document.getElementById(trackId);
+        const images = track.getElementsByTagName('img');
+        
+        const init = () => {
+            const count = images.length;
+            if (count === 0) return;
+            track.style.width = (count * 100) + "%";
+            for (let img of images) { img.style.width = (100 / count) + "%"; }
+            let pos = 0;
+            setInterval(() => {
+                pos = (pos + 1) % count;
+                track.style.transform = `translateX(-${pos * (100 / count)}%)`;
+            }, 2000); // 2 segundos
+        };
+
+        if (document.readyState === 'complete') { init(); } 
+        else { window.addEventListener('load', init); }
+    }
+
+    startAutoSlider('track1');
+    startAutoSlider('track2');
+</script>
+
+</body>
+</html>
